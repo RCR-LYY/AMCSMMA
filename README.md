@@ -22,7 +22,7 @@ This folder contains three datasets (dataset 1, dataset 2, and dataset 3). Takin
 **SM-miRNA association matrix.txt**: It is the constructed association matrix (the dimension is 831 $\times$ 541), each row of which represents a specific SM, and each column represents a specific miRNA. The (i,j)-th element of the association matrix, $m_{ij}$, is set to 1 if $SM_i$ is associated with $miRNA_j$, otherwise it is set to 0. The matrix has a total of 664 zeros and 448907 ones.         
 **adjacency matrix T.txt**: It is the adjacency matrix of the constructed SM-miRNA heterogeneous network (the dimension is 1342 $\times$ 1342), which is the input of AMCSMMA.py.
 ### AMCSMMA.py:   
-This file contains the python code of our algorithm. The input is the adjacency matrix (1342 $\times$ 1342), and the output is the prediction score matrix (831 $\times$ 541).
+This file contains the python code of our algorithm. The input is the adjacency matrix (the dimension of the adjacency matrix in Dataset 1 is 1342 $\times$ 1342) and the SM similarity matrix (the dimension of the SM similarity matrix in Dataset 1 is 831 $\times$ 831) . The output is the prediction score matrix (831 $\times$ 541). The (i,j)-th element of the prediction score matrix, $m'_{ij}$, denotes the association probability between $SM_i$ and $miRNA_j$.
 
 ## Contact
 If you have any problem or find mistakes, please feel free to contact me: z21070251@s.upc.edu.cn

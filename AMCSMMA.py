@@ -26,7 +26,7 @@ def SVT(Y, b):
     Y_n = np.dot(U, np.dot(s_n, V))
     return Y_n
 
-def AMC_step1(t, SM):
+def AMC_step1(t):
     # step1 parameters
     maxiter_1 = 3  # The value is 1-4
     for i in range(maxiter_1):
@@ -34,16 +34,17 @@ def AMC_step1(t, SM):
         r = 1  #The value is 1-3
         A = U[:, :r]
         B = V[:r, :]
-        t, k = AMC_step2(t, A, B, SM)
+        t, k = AMC_step2(t, A, B)
     t_new = t
-    return t_new
+    M_1 = t_new[0:SM.shape[0], SM.shape[0]:T.shape[1]]
+    return M_1
 
-def AMC_step2(t, A, B, SM):
+def AMC_step2(t, A, B):
     # step2 parameters
     maxiter_2 = 300
     alpha = 1
     beta = 10
-    gamma = 0.1
+    gamma = 1
     tol1 = 2 * 1e-3
     tol2 = 1 * 1e-5
     omega = np.zeros(t.shape)
@@ -84,14 +85,13 @@ def AMC_step2(t, A, B, SM):
             break
         iter0 = iter0 + 1
     T_recover = W
-    M_1 = T_recover[0:SM.shape[0], SM.shape[0]:T.shape[1]]
-    return M_1
+    return T_recover, iter0
 
 # Load data
-T = np.loadtxt(r'adjacency matrix T.txt', dtype=float)
-SM = np.loadtxt(r"SM similarity matrix.txt",dtype=float)
+T = np.loadtxt(r'D:\Chrome download\Github\AMCSMMA\AMCSMMA\Dataset\dataset 2\adjacency matrix T 2.txt', dtype=float)
+SM = np.loadtxt(r"D:\Chrome download\Github\AMCSMMA\AMCSMMA\Dataset\dataset 2\SM similarity matrix 2.txt",dtype=float)
 
 if __name__ == "__main__":
-    Scores_M = AMC_step1(T,SM)
+    Scores_M = AMC_step1(T)   #Scores_M is the prediction score matrix
 
 
