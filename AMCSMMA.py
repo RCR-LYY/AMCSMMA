@@ -88,8 +88,8 @@ def AMC_step2(t, A, B):
     return T_recover, iter0
 
 # Load data
-T = np.loadtxt(r'adjacency matrix T 2.txt', dtype=float)
-SM = np.loadtxt(r"SM similarity matrix 2.txt",dtype=float)
+T = np.loadtxt(r'adjacency matrix T.txt', dtype=float)
+SM = np.loadtxt(r"SM similarity matrix.txt",dtype=float)
 
 if __name__ == "__main__":
     Scores_M = AMC_step1(T)   #Scores_M is the prediction score matrix
