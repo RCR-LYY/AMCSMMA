@@ -26,7 +26,7 @@ def SVT(Y, b):
     Y_n = np.dot(U, np.dot(s_n, V))
     return Y_n
 
-def AMC_step1(t):
+def AMC_step1(t, SM):
     # step1 parameters
     maxiter_1 = 3  # The value is 1-4
     for i in range(maxiter_1):
@@ -34,11 +34,11 @@ def AMC_step1(t):
         r = 1  #The value is 1-3
         A = U[:, :r]
         B = V[:r, :]
-        t, k = AMC_step2(t, A, B)
+        t, k = AMC_step2(t, A, B, SM)
     t_new = t
     return t_new
 
-def AMC_step2(t, A, B):
+def AMC_step2(t, A, B, SM):
     # step2 parameters
     maxiter_2 = 300
     alpha = 1
@@ -84,12 +84,14 @@ def AMC_step2(t, A, B):
             break
         iter0 = iter0 + 1
     T_recover = W
-    return T_recover, iter0
+    M_1 = T_recover[0:SM.shape[0], SM.shape[0]:T.shape[1]]
+    return M_1
 
 # Load data
 T = np.loadtxt(r'adjacency matrix T.txt', dtype=float)
+SM = np.loadtxt(r"SM similarity matrix.txt",dtype=float)
 
 if __name__ == "__main__":
-    T_new = AMC_step1(T)
+    Scores_M = AMC_step1(T,SM)
 
 
