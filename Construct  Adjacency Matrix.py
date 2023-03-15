@@ -1,7 +1,7 @@
 # -*- codeing = utf-8 -*-
 # @Time : 2022/5/16 16:20
 # @Author : 任传儒
-# @File : AMCSMMA.py
+# @File : Construct Adjacency Matrix.py
 # @Software: PyCharm
 
 import numpy as np
