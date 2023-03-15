@@ -88,9 +88,6 @@ def AMC_step2(t, A, B):
 
 # Load data
 T = np.loadtxt(r'adjacency matrix T.txt', dtype=float)
-SM = np.loadtxt(r"SM similarity matrix.txt",dtype=float)
-miRNA = np.loadtxt(r"miRNA similarity matrix.txt",dtype=float)
-SM_miRNA_k = np.loadtxt(r"SM-miRNA-confirmed associations.txt",dtype=int)
 
 if __name__ == "__main__":
     T_new = AMC_step1(T)
