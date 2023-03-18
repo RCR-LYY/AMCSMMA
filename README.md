@@ -3,15 +3,16 @@
 AMCSMMA is an effective method to predict potential associations between small molecule drugs and miRNAs that is based on the truncated nuclear norm, an accurate, robust, and efficient approximation to the rank function. The datasets and code for the paper are released on this page.
 
 ## Operating Environment
-PyCharm == 2021.1.3
-Windows == 11         
+PyCharm == 2021.1.3       
+Python == 3.10  
+Windows == 11            
 Processor == AMD Ryzen 7 5800H 3.20GHz CPU with 6G RAM       
 
 ## Required Packages
-numpy == 1.24.1   
-matplotlib == 3.6.2   
-scipy == 1.10.0   
-scikit-learn == 1.2.0
+numpy == 1.24.1     
+matplotlib == 3.6.2    
+scipy == 1.10.0     
+scikit-learn == 1.2.0   
 
 ## File Description
 ### Dataset: 
