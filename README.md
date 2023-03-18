@@ -28,9 +28,9 @@ This file contains the Python code for constructing the adjacency matrix of the 
 ### AMCSMMA.py:   
 This file contains the Python code for our algorithm. The inputs are the adjacency matrix (the dimension of the adjacency matrix in Dataset 1 is 1342 $\times$ 1342) and the SM similarity matrix (the dimension of the SM similarity matrix in Dataset 1 is 831 $\times$ 831) . The output is the prediction score matrix (831 $\times$ 541). The (i,j)-th element of the prediction score matrix, $m'_{ij}$, denotes the association probability between $SM_i$ and $miRNA_j$.
 
-## Running steps & user help:
-Step 1, we run “Construct Adjacency Matrix.py”. Its input is the association matrix, the integrated SM similarity matrix and the integrated miRNA similarity matrix. Its output is the adjacency matrix of the heterogeneous SM-miRNA network, which is the target matrix for our algorithm.       
-Step 2, we execute “AMCSMMA.py”. Its input is the adjacency matrix of the heterogeneous SM-miRNA network and the integrated SM similarity matrix (used for matrix division). Its output is the SM-miRNA predictive score matrix. The (i,j)-th element of the predictive score matrix, $m'_{ij}$, represents the predictive score between $SM_i$ and $miRNA_j$.
+## Running steps:
+Step 1: we run “Construct Adjacency Matrix.py”. Its input is the association matrix, the integrated SM similarity matrix and the integrated miRNA similarity matrix. Its output is the adjacency matrix of the heterogeneous SM-miRNA network, which is the target matrix for our algorithm.       
+Step 2: we execute “AMCSMMA.py”. Its input is the adjacency matrix of the heterogeneous SM-miRNA network and the integrated SM similarity matrix (used for matrix division). Its output is the SM-miRNA predictive score matrix. The (i,j)-th element of the predictive score matrix, $m'_{ij}$, represents the predictive score between $SM_i$ and $miRNA_j$.
 
 ## Contact
 If you have any problems or find mistakes, please feel free to contact me: z21070251@s.upc.edu.cn
